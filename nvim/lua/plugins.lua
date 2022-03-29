@@ -1,0 +1,50 @@
+-- This file can be loaded by calling `lua require('plugins')` from your init.vim
+
+-- Only required if you have packer configured as `opt`
+
+local fn = vim.fn
+local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+if fn.empty(fn.glob(install_path)) > 0 then
+    packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+end
+
+vim.cmd [[packadd packer.nvim]]
+
+vim.cmd([[
+    augroup packer_user_config
+        autocmd!
+        autocmd BufWritePost plugins.lua source <afile> | PackerSync
+    augroup end
+]])
+
+return require('packer').startup(function()
+    -- Packer can manage itself
+    use 'wbthomason/packer.nvim'
+
+    -- lspconfig
+    use {'neovim/nvim-lspconfig', 'williamboman/nvim-lsp-installer'}
+
+    use 'lifepillar/vim-solarized8'
+    use 'chriskempson/base16-vim'
+
+    -- bufferline
+    use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
+    use {'vim-airline/vim-airline', 'vim-airline/vim-airline-themes'}
+   
+    use 'Raimondi/delimitMate'
+    use 'mhinz/vim-startify'
+    use 'ryanoasis/vim-devicons'
+    
+    use 'simnalamburt/vim-mundo'
+    use 'skywind3000/asyncrun.vim'
+    use {'Yggdroot/LeaderF', run = ':LeaderfInstallCExtension' }
+    use 'preservim/nerdtree'
+    use 'Xuyuanp/nerdtree-git-plugin'
+    use 'tiagofumo/vim-nerdtree-syntax-highlight'
+    use 'tpope/vim-fugitive'
+
+    if packer_bootstrap then
+        require('packer').sync()
+    end
+end)
+
