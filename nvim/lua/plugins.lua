@@ -22,7 +22,7 @@ return require('packer').startup(function()
     use 'wbthomason/packer.nvim'
 
     -- lspconfig
-    use {'neovim/nvim-lspconfig', 'williamboman/nvim-lsp-installer'}
+    use {'neovim/nvim-lspconfig'}
 
     use 'lifepillar/vim-solarized8'
     use 'chriskempson/base16-vim'

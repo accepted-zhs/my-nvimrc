@@ -1,7 +1,7 @@
 require('ui')
 require('plugins')
 require('plugin-config/setup')
-require('lsp/setup')
+require('lsp')
 require('keybindings')
 
 -- ready to migrate
@@ -104,3 +104,4 @@ if filereadable(expand("~/.vimrc_custom_settings"))
     source ~/.vimrc_custom_settings
 endif
 ]])
+
