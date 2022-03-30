@@ -89,6 +89,11 @@ _G.packer_plugins = {
     path = "/home/zesty_fox/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
   },
+  ["coc.nvim"] = {
+    loaded = true,
+    path = "/home/zesty_fox/.local/share/nvim/site/pack/packer/start/coc.nvim",
+    url = "https://github.com/neoclide/coc.nvim"
+  },
   delimitMate = {
     loaded = true,
     path = "/home/zesty_fox/.local/share/nvim/site/pack/packer/start/delimitMate",
@@ -104,15 +109,15 @@ _G.packer_plugins = {
     path = "/home/zesty_fox/.local/share/nvim/site/pack/packer/start/nerdtree-git-plugin",
     url = "https://github.com/Xuyuanp/nerdtree-git-plugin"
   },
-  ["nvim-lsp-installer"] = {
-    loaded = true,
-    path = "/home/zesty_fox/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",
-    url = "https://github.com/williamboman/nvim-lsp-installer"
-  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/zesty_fox/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/home/zesty_fox/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-web-devicons"] = {
     loaded = true,

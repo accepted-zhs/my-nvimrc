@@ -34,6 +34,7 @@ return require('packer').startup(function()
     use 'Raimondi/delimitMate'
     use 'mhinz/vim-startify'
     use 'ryanoasis/vim-devicons'
+    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     
     use 'simnalamburt/vim-mundo'
     use 'skywind3000/asyncrun.vim'
@@ -42,6 +43,8 @@ return require('packer').startup(function()
     use 'Xuyuanp/nerdtree-git-plugin'
     use 'tiagofumo/vim-nerdtree-syntax-highlight'
     use 'tpope/vim-fugitive'
+
+    use {'neoclide/coc.nvim', branch = 'release'}
 
     if packer_bootstrap then
         require('packer').sync()

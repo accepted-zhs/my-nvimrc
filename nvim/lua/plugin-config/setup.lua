@@ -1,2 +1,5 @@
 require('plugin-config/bufferline')
 require('plugin-config/leaderf')
+require('plugin-config/asyncrun')
+require('plugin-config/vimtex')
+require('plugin-config/coc')

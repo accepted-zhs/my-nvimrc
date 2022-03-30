@@ -21,6 +21,25 @@ vim.opt.incsearch = true
 vim.opt.wrap = false
 vim.opt.switchbuf = 'useopen,usetab,newtab'
 
+-- buffer
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.autowrite = true
+vim.opt.confirm = true
+vim.opt.autochdir = true
+
+-- GUI
+vim.cmd([[
+set guioptions-=l
+set guioptions-=L
+set guioptions-=r
+set guioptions-=R
+set guioptions-=m
+set guioptions-=T
+
+set guifont=FiraCode\ Nerd\ Font\ Mono\ Regular\ 11
+]])
+
 -- colorscheme
 vim.g.colors_name = 'base16-onedark'
 vim.opt.background = 'dark'

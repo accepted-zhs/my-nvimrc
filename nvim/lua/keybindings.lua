@@ -4,6 +4,15 @@ vim.g.maplocalleader = ","
 local map = vim.api.nvim_set_keymap
 local opt = {noremap = true, silent = true }
 
+vim.cmd([[
+vnoremap <leader><leader>y "+y<CR>
+nnoremap <leader><leader>p "+p<CR>
+nnoremap <leader>c :e $MYVIMRC<CR>
+nnoremap <leader>cc :e ~/.vimrc_custom_settings<CR>
+nnoremap <leader>s :source $MYVIMRC<CR>
+nnoremap <C-a> G$vgg0
+]])
+
 -- bufferline
 map("n", "<TAB>n", ":BufferLineCyclePrev<CR>", opt)
 map("n", "<TAB>p", ":BufferLineCycleNext<CR>", opt)
@@ -36,33 +45,81 @@ noremap <leader>fn :<C-U><C-R>=printf("Leaderf gtags --next %s", "")<CR><CR>
 noremap <leader>fp :<C-U><C-R>=printf("Leaderf gtags --previous %s", "")<CR><CR>
 ]])
 
--- LSP
--- See `:help vim.diagnostic.*` for documentation on any of the below functions
-vim.api.nvim_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opt)
-vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opt)
-vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opt)
-vim.api.nvim_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opt)
+-- Async Single File Compile & Run
+vim.api.nvim_set_keymap('n','<F5>',':call CompileFile()<CR>',opt)
+vim.api.nvim_set_keymap('n','<F6>',':call RunFile()<CR>',opt)
 
--- Use an on_attach function to only map the following keys
--- after the language server attaches to the current buffer
-local on_attach = function(client, bufnr)
-  -- Enable completion triggered by <c-x><c-o>
-  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+-- coc.nvim
+vim.cmd([[
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
-  -- Mappings.
-  -- See `:help vim.lsp.*` for documentation on any of the below functions
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opt)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opt)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opt)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opt)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opt)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opt)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opt)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opt)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opt)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opt)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opt)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opt)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opt)
-end
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
+
+" Formatting selected code.
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+" Applying codeAction to the selected region.
+" Example: `<leader>aap` for current paragraph
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+" Remap keys for applying codeAction to the current buffer.
+nmap <leader>ac  <Plug>(coc-codeaction)
+" Apply AutoFix to problem on the current line.
+nmap <leader>qf  <Plug>(coc-fix-current)
+
+" Map function and class text objects
+" NOTE: Requires 'textDocument.documentSymbol' support from the language server.
+xmap if <Plug>(coc-funcobj-i)
+omap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
+omap af <Plug>(coc-funcobj-a)
+xmap ic <Plug>(coc-classobj-i)
+omap ic <Plug>(coc-classobj-i)
+xmap ac <Plug>(coc-classobj-a)
+omap ac <Plug>(coc-classobj-a)
+
+" Remap <C-f> and <C-b> for scroll float windows/popups.
+if has('nvim-0.4.0') || has('patch-8.2.0750')
+    nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+    nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+    inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+    inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+    vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+    vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+endif
+
+" Use CTRL-S for selections ranges.
+" Requires 'textDocument/selectionRange' support of language server.
+nmap <silent> <C-s> <Plug>(coc-range-select)
+xmap <silent> <C-s> <Plug>(coc-range-select)
+
+"" Mappings for CoCList
+" Show all diagnostics.
+nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
+" Manage extensions.
+nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
+" Show commands.
+nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
+" Find symbol of current document.
+nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
+" Search workspace symbols.
+nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
+" Do default action for next item.
+nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
+" Do default action for previous item.
+nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
+" Resume latest coc list.
+nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+]])
