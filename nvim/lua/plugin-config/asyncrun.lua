@@ -3,7 +3,7 @@ vim.g.asyncrun_open = 6
 
 vim.cmd([[
 func! CompileFile()
-    let opts = {"cwd": $VIM_FILEPATH, "mode": "term", "rows": 8, "focus": 0}
+    let opts = {"cwd": $VIM_FILEPATH, "mode": "term", "pos": "right", "focus": 0, "cols": 56}
     if &filetype == 'cpp'
         call asyncrun#run("!", opts, "g++ \"$VIM_FILEPATH\" -o \"$VIM_PATHNOEXT\" -Wall -Wextra -std=c++14 -g -DLOCAL")
     elseif &filetype == 'c'
@@ -13,7 +13,7 @@ endfunc
 
 func! RunFile()
     call asyncrun#stop("")
-    let opts = {"cwd": $VIM_FILEPATH, "mode": "term", "rows": 8}
+    let opts = {"cwd": $VIM_FILEPATH, "mode": "term", "pos": "right", "cols": 56}
     if &filetype == 'cpp' || &filetype == 'c'
         call asyncrun#run("!", opts, "time \"$VIM_PATHNOEXT\"")
     elseif &filetype == 'python'
@@ -22,7 +22,4 @@ func! RunFile()
         call asyncrun#run("!", opts, "bash \"$VIM_FILEPATH\"")
     endif
 endfunc
-
-nnoremap <F5> :call CompileFile()<CR>
-nnoremap <F6> :call RunFile()<CR>
 ]])

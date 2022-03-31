@@ -21,9 +21,6 @@ return require('packer').startup(function()
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
-    -- lspconfig
-    use {'neovim/nvim-lspconfig'}
-
     use 'lifepillar/vim-solarized8'
     use 'chriskempson/base16-vim'
 
@@ -34,7 +31,6 @@ return require('packer').startup(function()
     use 'Raimondi/delimitMate'
     use 'mhinz/vim-startify'
     use 'ryanoasis/vim-devicons'
-    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     
     use 'simnalamburt/vim-mundo'
     use 'skywind3000/asyncrun.vim'
@@ -43,6 +39,7 @@ return require('packer').startup(function()
     use 'Xuyuanp/nerdtree-git-plugin'
     use 'tiagofumo/vim-nerdtree-syntax-highlight'
     use 'tpope/vim-fugitive'
+--    use {'iamcco/markdown-preview.nvim', run = ':call mkdp#util#install()' }
 
     use {'neoclide/coc.nvim', branch = 'release'}
 

@@ -2,6 +2,7 @@ vim.opt.termguicolors = true
 vim.opt.nu = true
 vim.opt.cursorline = true
 vim.opt.statusline = '2'
+vim.opt.showmode = false
 vim.opt.wildmenu = true
 vim.opt.eb = false
 vim.opt.cmdheight = 2

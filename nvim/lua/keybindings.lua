@@ -123,3 +123,8 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 ]])
+
+-- AsyncRun Compile & Run
+map("n", "<F5>", ":call CompileFile()<CR>", opt)
+map("n", "<F6>", ":call RunFile()<CR>", opt)
+

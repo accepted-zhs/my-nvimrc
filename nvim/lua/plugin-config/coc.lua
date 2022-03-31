@@ -1,9 +1,7 @@
-vim.g.coc_global_extensions = {'coc-json', 'coc-git'}
+vim.g.coc_global_extensions = {'coc-json', 'coc-vimlsp', 'coc-sh', 'coc-pyright', 'coc-clangd', 'coc-highlight', 'coc-vimtex'}
 
 vim.cmd([[
 """ coc.nvim
-let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-vimlsp', 'coc-sh', 'coc-pyright', 'coc-clangd', 'coc-highlight', 'coc-vimtex']
-
 let g:coc_sources_disable_map = { '*': ['buffer', 'around'] }
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
@@ -27,11 +25,11 @@ endif
 " other plugin before putting this into your config.
 inoremap <silent><expr> <TAB>
     \ pumvisible() ? "\<C-n>" :
-    \ check_back_space() ? "\<TAB>" :
+    \ Check_back_space() ? "\<TAB>" :
     \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-function! s:check_back_space() abort
+function! Check_back_space() abort
     let col = col('.') - 1    
     return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
