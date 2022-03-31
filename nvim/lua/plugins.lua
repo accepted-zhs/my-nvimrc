@@ -24,8 +24,6 @@ return require('packer').startup(function()
     use 'lifepillar/vim-solarized8'
     use 'chriskempson/base16-vim'
 
-    -- bufferline
-    use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
     use {'vim-airline/vim-airline', 'vim-airline/vim-airline-themes'}
    
     use 'Raimondi/delimitMate'
