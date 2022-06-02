@@ -31,14 +31,7 @@ vim.opt.autochdir = true
 
 -- GUI
 vim.cmd([[
-set guioptions-=l
-set guioptions-=L
-set guioptions-=r
-set guioptions-=R
-set guioptions-=m
-set guioptions-=T
-
-set guifont=FiraCode\ Nerd\ Font\ Mono\ Regular\ 11
+set guifont=FiraCode\ Nerd\ Font\ Mono
 ]])
 
 -- colorscheme
