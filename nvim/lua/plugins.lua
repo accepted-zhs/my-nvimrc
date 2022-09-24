@@ -40,6 +40,7 @@ return require('packer').startup(function()
 --    use {'iamcco/markdown-preview.nvim', run = ':call mkdp#util#install()' }
 
     use {'neoclide/coc.nvim', branch = 'release'}
+    use "lukas-reineke/indent-blankline.nvim"
 
     if packer_bootstrap then
         require('packer').sync()
