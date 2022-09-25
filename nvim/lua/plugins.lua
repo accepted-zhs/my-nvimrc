@@ -25,10 +25,12 @@ return require('packer').startup(function()
     use 'chriskempson/base16-vim'
 
     use {'vim-airline/vim-airline', 'vim-airline/vim-airline-themes'}
+    use 'sainnhe/sonokai'
    
     use 'Raimondi/delimitMate'
     use 'mhinz/vim-startify'
     use 'ryanoasis/vim-devicons'
+    use "lukas-reineke/indent-blankline.nvim"
     
     use 'simnalamburt/vim-mundo'
     use 'skywind3000/asyncrun.vim'
@@ -40,7 +42,6 @@ return require('packer').startup(function()
 --    use {'iamcco/markdown-preview.nvim', run = ':call mkdp#util#install()' }
 
     use {'neoclide/coc.nvim', branch = 'release'}
-    use "lukas-reineke/indent-blankline.nvim"
 
     if packer_bootstrap then
         require('packer').sync()
