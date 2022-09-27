@@ -31,6 +31,10 @@ return require('packer').startup(function()
     use 'mhinz/vim-startify'
     use 'ryanoasis/vim-devicons'
     use "lukas-reineke/indent-blankline.nvim"
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+    }
     
     use 'simnalamburt/vim-mundo'
     use 'skywind3000/asyncrun.vim'
