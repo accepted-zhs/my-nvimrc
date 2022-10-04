@@ -27,8 +27,25 @@ return require('packer').startup(function()
     use {'vim-airline/vim-airline', 'vim-airline/vim-airline-themes'}
     use 'sainnhe/sonokai'
    
-    use 'Raimondi/delimitMate'
-    use 'mhinz/vim-startify'
+--    use 'Raimondi/delimitMate'
+    use {
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
+    }
+    use {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    }
+--    use 'mhinz/vim-startify'
+    use {
+        'goolord/alpha-nvim',
+        requires = { 'kyazdani42/nvim-web-devicons' },
+        config = function ()
+            require'alpha'.setup(require'alpha.themes.startify'.config)
+        end
+    }
     use 'ryanoasis/vim-devicons'
     use "lukas-reineke/indent-blankline.nvim"
     use {
@@ -38,7 +55,12 @@ return require('packer').startup(function()
     
     use 'simnalamburt/vim-mundo'
     use 'skywind3000/asyncrun.vim'
-    use {'Yggdroot/LeaderF', run = ':LeaderfInstallCExtension' }
+--    use {'Yggdroot/LeaderF', run = ':LeaderfInstallCExtension' }
+    use {
+        'nvim-telescope/telescope.nvim',
+        requires = { {'nvim-lua/plenary.nvim'} }
+    }
+
     use 'preservim/nerdtree'
     use 'Xuyuanp/nerdtree-git-plugin'
     use 'tiagofumo/vim-nerdtree-syntax-highlight'

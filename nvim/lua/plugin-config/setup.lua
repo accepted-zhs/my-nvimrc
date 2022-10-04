@@ -1,4 +1,5 @@
-require('plugin-config/leaderf')
+-- require('plugin-config/leaderf')
+require('plugin-config/telescope')
 require('plugin-config/asyncrun')
 require('plugin-config/vimtex')
 require('plugin-config/coc')
