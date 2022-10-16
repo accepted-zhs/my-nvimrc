@@ -27,11 +27,7 @@ return require('packer').startup(function()
     use {'vim-airline/vim-airline', 'vim-airline/vim-airline-themes'}
     use 'sainnhe/sonokai'
    
---    use 'Raimondi/delimitMate'
-    use {
-        "windwp/nvim-autopairs",
-        config = function() require("nvim-autopairs").setup {} end
-    }
+    use 'Raimondi/delimitMate'
     use {
         'numToStr/Comment.nvim',
         config = function()
