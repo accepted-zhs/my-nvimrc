@@ -25,6 +25,9 @@ return require('packer').startup(function()
     use 'chriskempson/base16-vim'
 
     use {'vim-airline/vim-airline', 'vim-airline/vim-airline-themes'}
+    
+    use 'nvim-tree/nvim-web-devicons'
+    use {'romgrk/barbar.nvim', wants = 'nvim-web-devicons'}
     use 'sainnhe/sonokai'
    
     use 'Raimondi/delimitMate'
