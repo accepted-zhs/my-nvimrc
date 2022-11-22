@@ -86,11 +86,6 @@ _G.packer_plugins = {
     path = "/home/zesty_fox/.local/share/nvim/site/pack/packer/start/alpha-nvim",
     url = "https://github.com/goolord/alpha-nvim"
   },
-  ["asyncrun.vim"] = {
-    loaded = true,
-    path = "/home/zesty_fox/.local/share/nvim/site/pack/packer/start/asyncrun.vim",
-    url = "https://github.com/skywind3000/asyncrun.vim"
-  },
   ["barbar.nvim"] = {
     loaded = true,
     path = "/home/zesty_fox/.local/share/nvim/site/pack/packer/start/barbar.nvim",
@@ -106,6 +101,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/zesty_fox/.local/share/nvim/site/pack/packer/start/coc.nvim",
     url = "https://github.com/neoclide/coc.nvim"
+  },
+  ["code_runner.nvim"] = {
+    loaded = true,
+    path = "/home/zesty_fox/.local/share/nvim/site/pack/packer/start/code_runner.nvim",
+    url = "https://github.com/CRAG666/code_runner.nvim"
   },
   delimitMate = {
     loaded = true,

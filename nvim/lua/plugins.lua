@@ -10,13 +10,6 @@ end
 
 vim.cmd [[packadd packer.nvim]]
 
-vim.cmd([[
-    augroup packer_user_config
-        autocmd!
-        autocmd BufWritePost plugins.lua source <afile> | PackerSync
-    augroup end
-]])
-
 return require('packer').startup(function()
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
@@ -37,7 +30,6 @@ return require('packer').startup(function()
             require('Comment').setup()
         end
     }
---    use 'mhinz/vim-startify'
     use {
         'goolord/alpha-nvim',
         requires = { 'kyazdani42/nvim-web-devicons' },
@@ -53,8 +45,7 @@ return require('packer').startup(function()
     }
     
     use 'simnalamburt/vim-mundo'
-    use 'skywind3000/asyncrun.vim'
---    use {'Yggdroot/LeaderF', run = ':LeaderfInstallCExtension' }
+    use { 'CRAG666/code_runner.nvim', requires = 'nvim-lua/plenary.nvim' }
     use {
         'nvim-telescope/telescope.nvim',
         requires = { {'nvim-lua/plenary.nvim'} }
@@ -64,7 +55,6 @@ return require('packer').startup(function()
     use 'Xuyuanp/nerdtree-git-plugin'
     use 'tiagofumo/vim-nerdtree-syntax-highlight'
     use 'tpope/vim-fugitive'
---    use {'iamcco/markdown-preview.nvim', run = ':call mkdp#util#install()' }
 
     use {'neoclide/coc.nvim', branch = 'release'}
 
