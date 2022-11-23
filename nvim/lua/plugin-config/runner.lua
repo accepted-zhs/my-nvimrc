@@ -8,7 +8,7 @@ require('code_runner').setup({
     cpp = "cd \"$dir\" && g++ \"$fileName\" -o \"$fileNameWithoutExt\" -Wall -Wextra -fsanitize=address,undefined -ggdb"
   },
   -- choose default mode (valid term, tab, float, toggle, buf)
-  mode = 'float',
+  mode = 'term',
   -- Focus on runner window(only works on toggle, term and tab mode)
   focus = false,
   -- startinsert (see ':h inserting-ex')
@@ -17,7 +17,7 @@ require('code_runner').setup({
     --  Position to open the terminal, this option is ignored if mode is tab
     position = "bot",
     -- window size, this option is ignored if tab is true
-    size = 8,
+    size = 10,
   },
   float = {
     -- Key that close the code_runner floating window
