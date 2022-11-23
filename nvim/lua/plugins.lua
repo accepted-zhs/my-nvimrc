@@ -17,19 +17,23 @@ return require('packer').startup(function()
     use 'lifepillar/vim-solarized8'
     use 'chriskempson/base16-vim'
 
-    use {'vim-airline/vim-airline', 'vim-airline/vim-airline-themes'}
+    use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
     
     use 'nvim-tree/nvim-web-devicons'
     use {'romgrk/barbar.nvim', wants = 'nvim-web-devicons'}
     use 'sainnhe/sonokai'
    
-    use 'Raimondi/delimitMate'
     use {
         'numToStr/Comment.nvim',
         config = function()
             require('Comment').setup()
         end
     }
+    use {
+    	"windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
+    }
+
     use {
         'goolord/alpha-nvim',
         requires = { 'kyazdani42/nvim-web-devicons' },
@@ -46,17 +50,27 @@ return require('packer').startup(function()
     
     use 'simnalamburt/vim-mundo'
     use { 'CRAG666/code_runner.nvim', requires = 'nvim-lua/plenary.nvim' }
-    use {
-        'nvim-telescope/telescope.nvim',
-        requires = { {'nvim-lua/plenary.nvim'} }
-    }
+    use { 'nvim-telescope/telescope.nvim', requires = { {'nvim-lua/plenary.nvim'} } }
 
     use 'preservim/nerdtree'
     use 'Xuyuanp/nerdtree-git-plugin'
     use 'tiagofumo/vim-nerdtree-syntax-highlight'
     use 'tpope/vim-fugitive'
 
-    use {'neoclide/coc.nvim', branch = 'release'}
+    use { -- LSP
+        "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim",
+        "neovim/nvim-lspconfig",
+        'hrsh7th/nvim-cmp', -- Autocompletion plugin
+        'hrsh7th/cmp-nvim-lsp', -- LSP source for nvim-cmp
+        'saadparwaiz1/cmp_luasnip', -- Snippets source for nvim-cmp
+        'hrsh7th/cmp-path',
+        'hrsh7th/cmp-cmdline',
+        'hrsh7th/cmp-buffer',
+        'L3MON4D3/LuaSnip', -- Snippets plugin
+        'ray-x/lsp_signature.nvim',
+    }
+
 
     if packer_bootstrap then
         require('packer').sync()
