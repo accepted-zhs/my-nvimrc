@@ -5,7 +5,7 @@ require('code_runner').setup({
     python = "python3 -u",
     typescript = "deno run",
     rust = "cd $dir && rustc $fileName && $dir/$fileNameWithoutExt",
-    cpp = "cd \"$dir\" && g++ \"$fileName\" -o \"$fileNameWithoutExt\" -Wall -Wextra -fsanitize=address,undefined -ggdb"
+    cpp = "cd \"$dir\" && g++ \"$fileName\" -o \"$fileNameWithoutExt\" -Wall -Wextra -fsanitize=address,undefined -g3 -DLOCAL"
   },
   -- choose default mode (valid term, tab, float, toggle, buf)
   mode = 'term',
@@ -17,7 +17,7 @@ require('code_runner').setup({
     --  Position to open the terminal, this option is ignored if mode is tab
     position = "bot",
     -- window size, this option is ignored if tab is true
-    size = 10,
+    size = 8,
   },
   float = {
     -- Key that close the code_runner floating window
