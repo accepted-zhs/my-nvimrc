@@ -35,6 +35,5 @@ set guifont=FiraCode\ Nerd\ Font\ Mono
 ]])
 
 -- colorscheme
-vim.g.colors_name = 'sonokai'
+vim.g.colors_name = 'tokyonight-moon'
 vim.opt.background = 'dark'
-vim.g.airline_theme = 'onedark'

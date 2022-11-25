@@ -16,12 +16,13 @@ return require('packer').startup(function()
 
     use 'lifepillar/vim-solarized8'
     use 'chriskempson/base16-vim'
+    use 'folke/tokyonight.nvim'
+    use 'sainnhe/sonokai'
 
     use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
-    
     use 'nvim-tree/nvim-web-devicons'
     use {'romgrk/barbar.nvim', wants = 'nvim-web-devicons'}
-    use 'sainnhe/sonokai'
+    use {"petertriho/nvim-scrollbar" }
    
     use {
         'numToStr/Comment.nvim',
@@ -68,8 +69,7 @@ return require('packer').startup(function()
         'hrsh7th/cmp-cmdline',
         'hrsh7th/cmp-buffer',
         'L3MON4D3/LuaSnip', -- Snippets plugin
-        'hrsh7th/cmp-nvim-lsp-signature-help',
-        -- 'ray-x/lsp_signature.nvim',
+        "ray-x/lsp_signature.nvim",
     }
 
     if packer_bootstrap then

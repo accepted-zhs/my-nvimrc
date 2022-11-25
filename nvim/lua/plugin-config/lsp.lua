@@ -86,7 +86,6 @@ cmp.setup {
     { name = 'luasnip' },
     { name = 'buffer' },
     { name = 'path' },
-    { name = 'nvim_lsp_signature_help' },
   },
 }
 
@@ -118,9 +117,11 @@ cmp.setup.cmdline(':', {
 })
 
 -- LSP signature_help
--- local cfg = {
---   hint_prefix = "",
---   transparency = 20, -- disabled by default, allow floating win transparent value 1~100
--- }
--- require'lsp_signature'.setup(cfg) -- no need to specify bufnr if you don't use toggle_key
+local cfg = {
+  hint_prefix = "",
+  close_timeout = 1000,
+  -- floating_window_off_y = 10,
+  transparency = 20, -- disabled by default, allow floating win transparent value 1~100
+}
+require'lsp_signature'.setup(cfg) -- no need to specify bufnr if you don't use toggle_key
 
