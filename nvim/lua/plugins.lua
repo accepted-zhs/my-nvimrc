@@ -70,6 +70,7 @@ return require('packer').startup(function()
         'hrsh7th/cmp-buffer',
         'L3MON4D3/LuaSnip', -- Snippets plugin
         "ray-x/lsp_signature.nvim",
+        { "glepnir/lspsaga.nvim", branch = "main" }, -- LSP UI
     }
 
     if packer_bootstrap then

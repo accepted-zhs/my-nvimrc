@@ -117,11 +117,6 @@ _G.packer_plugins = {
     path = "/home/zesty_fox/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
-  ["cmp-nvim-lsp-signature-help"] = {
-    loaded = true,
-    path = "/home/zesty_fox/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp-signature-help",
-    url = "https://github.com/hrsh7th/cmp-nvim-lsp-signature-help"
-  },
   ["cmp-path"] = {
     loaded = true,
     path = "/home/zesty_fox/.local/share/nvim/site/pack/packer/start/cmp-path",
@@ -146,6 +141,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/zesty_fox/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim",
     url = "https://github.com/ray-x/lsp_signature.nvim"
+  },
+  ["lspsaga.nvim"] = {
+    config = { "\27LJ\2\2A\0\0\3\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\1\2\0004\2\0\0B\1\2\1K\0\1\0\18init_lsp_saga\flspsaga\frequire\0" },
+    loaded = true,
+    path = "/home/zesty_fox/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
+    url = "https://github.com/glepnir/lspsaga.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
@@ -256,6 +257,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: lspsaga.nvim
+time([[Config for lspsaga.nvim]], true)
+try_loadstring("\27LJ\2\2A\0\0\3\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\1\2\0004\2\0\0B\1\2\1K\0\1\0\18init_lsp_saga\flspsaga\frequire\0", "config", "lspsaga.nvim")
+time([[Config for lspsaga.nvim]], false)
 -- Config for: Comment.nvim
 time([[Config for Comment.nvim]], true)
 try_loadstring("\27LJ\2\0025\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
