@@ -143,7 +143,6 @@ _G.packer_plugins = {
     url = "https://github.com/ray-x/lsp_signature.nvim"
   },
   ["lspsaga.nvim"] = {
-    config = { "\27LJ\2\2A\0\0\3\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\1\2\0004\2\0\0B\1\2\1K\0\1\0\18init_lsp_saga\flspsaga\frequire\0" },
     loaded = true,
     path = "/home/zesty_fox/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
     url = "https://github.com/glepnir/lspsaga.nvim"
@@ -163,15 +162,15 @@ _G.packer_plugins = {
     path = "/home/zesty_fox/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
-  nerdtree = {
+  ["neo-tree.nvim"] = {
     loaded = true,
-    path = "/home/zesty_fox/.local/share/nvim/site/pack/packer/start/nerdtree",
-    url = "https://github.com/preservim/nerdtree"
+    path = "/home/zesty_fox/.local/share/nvim/site/pack/packer/start/neo-tree.nvim",
+    url = "https://github.com/nvim-neo-tree/neo-tree.nvim"
   },
-  ["nerdtree-git-plugin"] = {
+  ["nui.nvim"] = {
     loaded = true,
-    path = "/home/zesty_fox/.local/share/nvim/site/pack/packer/start/nerdtree-git-plugin",
-    url = "https://github.com/Xuyuanp/nerdtree-git-plugin"
+    path = "/home/zesty_fox/.local/share/nvim/site/pack/packer/start/nui.nvim",
+    url = "https://github.com/MunifTanjim/nui.nvim"
   },
   ["nvim-autopairs"] = {
     config = { "\27LJ\2\2@\0\0\2\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0004\1\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0" },
@@ -244,11 +243,6 @@ _G.packer_plugins = {
     path = "/home/zesty_fox/.local/share/nvim/site/pack/packer/start/vim-mundo",
     url = "https://github.com/simnalamburt/vim-mundo"
   },
-  ["vim-nerdtree-syntax-highlight"] = {
-    loaded = true,
-    path = "/home/zesty_fox/.local/share/nvim/site/pack/packer/start/vim-nerdtree-syntax-highlight",
-    url = "https://github.com/tiagofumo/vim-nerdtree-syntax-highlight"
-  },
   ["vim-solarized8"] = {
     loaded = true,
     path = "/home/zesty_fox/.local/share/nvim/site/pack/packer/start/vim-solarized8",
@@ -257,10 +251,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: lspsaga.nvim
-time([[Config for lspsaga.nvim]], true)
-try_loadstring("\27LJ\2\2A\0\0\3\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\1\2\0004\2\0\0B\1\2\1K\0\1\0\18init_lsp_saga\flspsaga\frequire\0", "config", "lspsaga.nvim")
-time([[Config for lspsaga.nvim]], false)
 -- Config for: Comment.nvim
 time([[Config for Comment.nvim]], true)
 try_loadstring("\27LJ\2\0025\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")

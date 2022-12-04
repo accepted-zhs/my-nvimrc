@@ -23,7 +23,7 @@ return require('packer').startup(function()
     use 'nvim-tree/nvim-web-devicons'
     use {'romgrk/barbar.nvim', wants = 'nvim-web-devicons'}
     use {"petertriho/nvim-scrollbar" }
-   
+
     use {
         'numToStr/Comment.nvim',
         config = function()
@@ -48,14 +48,20 @@ return require('packer').startup(function()
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
     }
-    
+
     use 'simnalamburt/vim-mundo'
     use { 'CRAG666/code_runner.nvim', requires = 'nvim-lua/plenary.nvim' }
     use { 'nvim-telescope/telescope.nvim', requires = { {'nvim-lua/plenary.nvim'} } }
 
-    use 'preservim/nerdtree'
-    use 'Xuyuanp/nerdtree-git-plugin'
-    use 'tiagofumo/vim-nerdtree-syntax-highlight'
+    use {
+        "nvim-neo-tree/neo-tree.nvim",
+        branch = "v2.x",
+        requires = {
+            "nvim-lua/plenary.nvim",
+            "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+            "MunifTanjim/nui.nvim",
+        }
+    }
     use 'tpope/vim-fugitive'
 
     use { -- LSP
