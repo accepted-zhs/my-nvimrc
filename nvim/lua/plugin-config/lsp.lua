@@ -42,6 +42,9 @@ require("mason-lspconfig").setup_handlers {
     end,
 }
 
+-- language extensions
+require("clangd_extensions").setup()
+
 -- Completions
 
 -- luasnip setup
@@ -87,6 +90,18 @@ cmp.setup {
     { name = 'luasnip' },
     { name = 'buffer' },
     { name = 'path' },
+  },
+  sorting = {
+      comparators = {
+          cmp.config.compare.offset,
+          cmp.config.compare.exact,
+          cmp.config.compare.recently_used,
+          require("clangd_extensions.cmp_scores"),
+          cmp.config.compare.kind,
+          cmp.config.compare.sort_text,
+          cmp.config.compare.length,
+          cmp.config.compare.order,
+      },
   },
 }
 
@@ -181,3 +196,4 @@ keymap("n", "<A-d>", "<cmd>Lspsaga open_floaterm<CR>", { silent = true })
 keymap("n", "<A-d>", "<cmd>Lspsaga open_floaterm lazygit<CR>", { silent = true })
 -- close floaterm
 keymap("t", "<A-d>", [[<C-\><C-n><cmd>Lspsaga close_floaterm<CR>]], { silent = true })
+

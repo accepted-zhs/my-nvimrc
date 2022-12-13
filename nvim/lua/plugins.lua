@@ -77,6 +77,8 @@ return require('packer').startup(function()
         'L3MON4D3/LuaSnip', -- Snippets plugin
         "ray-x/lsp_signature.nvim",
         { "glepnir/lspsaga.nvim", branch = "main" }, -- LSP UI
+
+        'p00f/clangd_extensions.nvim', -- Clangd extensions
     }
 
     if packer_bootstrap then
