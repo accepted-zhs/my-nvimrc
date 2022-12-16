@@ -1,5 +1,5 @@
-require('ui')
 require('plugins')
+require('ui')
 require('keybindings')
 require('plugin-config/setup')
 

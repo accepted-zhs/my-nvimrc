@@ -21,8 +21,11 @@ return require('packer').startup(function()
 
     use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
     use 'nvim-tree/nvim-web-devicons'
-    use {'romgrk/barbar.nvim', wants = 'nvim-web-devicons'}
     use {"petertriho/nvim-scrollbar" }
+    use {
+        'kdheepak/tabline.nvim',
+        requires = { { 'hoob3rt/lualine.nvim', opt=true }, {'kyazdani42/nvim-web-devicons', opt = true} }
+    }
 
     use {
         'numToStr/Comment.nvim',
