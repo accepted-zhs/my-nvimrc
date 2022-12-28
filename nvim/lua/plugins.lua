@@ -47,7 +47,7 @@ return require('lazy').setup({
     "lukas-reineke/indent-blankline.nvim",
     {
         'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate'
+        cmd = 'TSUpdate'
     },
 
     'simnalamburt/vim-mundo',
