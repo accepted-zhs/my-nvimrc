@@ -66,6 +66,7 @@ return require('packer').startup(function()
         },
     }
     use 'tpope/vim-fugitive'
+    use { 'akinsho/toggleterm.nvim', config = function() require("toggleterm").setup() end }
 
     use { -- LSP
         "williamboman/mason.nvim",
