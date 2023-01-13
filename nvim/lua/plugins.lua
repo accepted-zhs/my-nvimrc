@@ -55,7 +55,6 @@ return require('packer').startup(function()
     use 'simnalamburt/vim-mundo'
     use { 'CRAG666/code_runner.nvim', requires = 'nvim-lua/plenary.nvim' }
     use { 'nvim-telescope/telescope.nvim', requires = { {'nvim-lua/plenary.nvim'} } }
-
     use {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v2.x",
@@ -66,6 +65,7 @@ return require('packer').startup(function()
         },
     }
     use 'tpope/vim-fugitive'
+
     use { 'akinsho/toggleterm.nvim', config = function() require("toggleterm").setup() end }
 
     use { -- LSP
@@ -80,9 +80,14 @@ return require('packer').startup(function()
         'hrsh7th/cmp-buffer',
         'L3MON4D3/LuaSnip', -- Snippets plugin
         "ray-x/lsp_signature.nvim",
-        { "glepnir/lspsaga.nvim", branch = "main" }, -- LSP UI
-
         'p00f/clangd_extensions.nvim', -- Clangd extensions
+    }
+    use {
+        "glepnir/lspsaga.nvim", -- LSP UI
+        branch = "main",
+        config = function()
+            require('lspsaga').setup({})
+        end,
     }
 
     if packer_bootstrap then
