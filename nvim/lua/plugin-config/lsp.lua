@@ -24,7 +24,7 @@ local on_attach = function(_, bufnr)
   keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
   keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
-
+require"fidget".setup{}
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 -- mason.nvim
@@ -41,6 +41,9 @@ require("mason-lspconfig").setup_handlers {
         }
     end,
 }
+
+-- show lsp progress
+require"fidget".setup{}
 
 -- clangd
 require("clangd_extensions").setup()

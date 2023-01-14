@@ -81,6 +81,7 @@ return require('packer').startup(function()
         'L3MON4D3/LuaSnip', -- Snippets plugin
         "ray-x/lsp_signature.nvim",
         'p00f/clangd_extensions.nvim', -- Clangd extensions
+        'j-hui/fidget.nvim',
     }
     use {
         "glepnir/lspsaga.nvim", -- LSP UI
