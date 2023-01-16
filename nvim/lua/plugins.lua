@@ -52,9 +52,12 @@ return require('packer').startup(function()
         run = ':TSUpdate'
     }
 
-    use 'simnalamburt/vim-mundo'
     use { 'CRAG666/code_runner.nvim', requires = 'nvim-lua/plenary.nvim' }
-    use { 'nvim-telescope/telescope.nvim', requires = { {'nvim-lua/plenary.nvim'} } }
+    use { 'nvim-telescope/telescope.nvim', requires = {
+            'nvim-lua/plenary.nvim',
+            "debugloop/telescope-undo.nvim",
+        }
+    }
     use {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v2.x",
