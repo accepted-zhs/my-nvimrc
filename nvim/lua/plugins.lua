@@ -52,7 +52,7 @@ return require('packer').startup(function()
         run = ':TSUpdate'
     }
 
-    use { 'CRAG666/code_runner.nvim', requires = 'nvim-lua/plenary.nvim' }
+    use 'skywind3000/asyncrun.vim'
     use { 'nvim-telescope/telescope.nvim', requires = {
             'nvim-lua/plenary.nvim',
             "debugloop/telescope-undo.nvim",
@@ -83,7 +83,7 @@ return require('packer').startup(function()
         'hrsh7th/cmp-buffer',
         'L3MON4D3/LuaSnip', -- Snippets plugin
         "ray-x/lsp_signature.nvim",
-        'p00f/clangd_extensions.nvim', -- Clangd extensions
+        'p00f/clangd_extensions.nvim',
         'j-hui/fidget.nvim',
     }
     use {
