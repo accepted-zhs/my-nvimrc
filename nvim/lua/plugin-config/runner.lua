@@ -1,25 +1,12 @@
 vim.cmd([[
-func! CompileFile()
-    let opts = {"cwd": $VIM_FILEPATH, "mode": "term", "cols": 54, "focus": 0, "pos": "right"}
-    if &filetype == 'cpp'
-        call asyncrun#run("!", opts, "g++ \"$VIM_FILEPATH\" -o \"$VIM_PATHNOEXT\" -DLOCAL -Wall -Wextra -std=c++14 -g3 -fsanitize=address,undefined")
-    elseif &filetype == 'c'
-        call asyncrun#run("!", opts, "gcc \"$VIM_FILEPATH\" -o \"$VIM_PATHNOEXT\" -Wall -Wextra")
-    endif
-endfunc
-
-func! RunFile()
-    call asyncrun#stop("")
-    let opts = {"cwd": $VIM_FILEPATH, "mode": "term", "cols": 54, "pos": "right"}
-    if &filetype == 'cpp' || &filetype == 'c'
-        call asyncrun#run("!", opts, "/usr/bin/time -f \"user time: %U s\nreal time: %e s\nmemory: %M kb\" \"$VIM_PATHNOEXT\"")
-    elseif &filetype == 'python'
-        call asyncrun#run("!", opts, "python3 -u \"$VIM_FILEPATH\"")
-    elseif &filetype == 'sh'
-        call asyncrun#run("!", opts, "bash \"$VIM_FILEPATH\"")
-    endif
-endfunc
+let g:asynctasks_rtp_config = "tasks.ini"
+let g:asynctasks_term_pos = 'right'
+let g:asynctasks_term_rows = 10
+let g:asynctasks_term_cols = 54
+let g:asynctasks_profile = 'debug'
+let g:asynctasks_term_focus = 0
 ]])
 
-vim.keymap.set('n', '<F5>', ':call CompileFile()<CR>', { noremap = true, silent = false })
-vim.keymap.set('n', '<F6>', ':call RunFile()<CR>', { noremap = true, silent = false })
+vim.keymap.set('n', '<F5>', ':AsyncTask file-build<CR>', { noremap = true, silent = false })
+vim.keymap.set('n', '<F6>', ':AsyncTask file-run<CR>', { noremap = true, silent = false })
+

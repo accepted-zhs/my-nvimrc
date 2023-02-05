@@ -53,6 +53,7 @@ return require('packer').startup(function()
     }
 
     use 'skywind3000/asyncrun.vim'
+    use 'skywind3000/asynctasks.vim'
     use { 'nvim-telescope/telescope.nvim', requires = {
             'nvim-lua/plenary.nvim',
             "debugloop/telescope-undo.nvim",
@@ -68,8 +69,6 @@ return require('packer').startup(function()
         },
     }
     use 'tpope/vim-fugitive'
-
-    use { 'akinsho/toggleterm.nvim', config = function() require("toggleterm").setup() end }
 
     use { -- LSP
         "williamboman/mason.nvim",
