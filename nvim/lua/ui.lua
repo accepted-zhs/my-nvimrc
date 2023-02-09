@@ -6,6 +6,7 @@ vim.opt.showmode = false
 vim.opt.wildmenu = true
 vim.opt.eb = false
 vim.opt.cmdheight = 2
+vim.wo.signcolumn = 'yes'
 
 vim.opt.expandtab = true
 vim.opt.ts = 4
