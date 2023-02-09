@@ -1,6 +1,7 @@
+require('plugin-config/tabline')
 require('plugin-config/telescope')
 require('plugin-config/vimtex')
 require('plugin-config/nvim-treesitter')
 require('plugin-config/runner')
 require('plugin-config/lsp')
-require('plugin-config/nvim-tree')
+require('plugin-config/file-manager')
