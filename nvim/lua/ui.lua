@@ -63,8 +63,6 @@ set sessionoptions+=tabpages,globals " store tabpages and globals in session
 ]]
 
 -- statusline
-require('lualine').setup()
+require('lualine').setup({})
 
--- scrollbar
-require("scrollbar").setup()
 

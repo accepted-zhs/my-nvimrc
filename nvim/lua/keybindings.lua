@@ -13,5 +13,3 @@ nnoremap <leader>s :source $MYVIMRC<CR>
 nnoremap <C-a> G$vgg0
 ]])
 
-vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<CR>", { silent = true })
-
