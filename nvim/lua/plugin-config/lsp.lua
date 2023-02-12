@@ -29,7 +29,9 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 -- mason.nvim
 require("mason").setup()
-require("mason-lspconfig").setup()
+require("mason-lspconfig").setup({
+    ensure_installed = { "lua_ls", "rust_analyzer", "clangd", "pyright" },
+})
 require("mason-lspconfig").setup_handlers {
     -- The first entry (without a key) will be the default handler
     -- and will be called for each installed server that doesn't have
@@ -48,7 +50,7 @@ require"fidget".setup{}
 -- clangd
 require("clangd_extensions").setup()
 -- sumneko_lua
-require'lspconfig'.sumneko_lua.setup {
+require'lspconfig'.lua_ls.setup {
   settings = {
     Lua = {
       runtime = {
