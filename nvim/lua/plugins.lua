@@ -20,12 +20,9 @@ return require('packer').startup(function()
     use 'sainnhe/sonokai'
 
     use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
+    use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
     use 'nvim-tree/nvim-web-devicons'
     use {"petertriho/nvim-scrollbar" }
-    use {
-        'kdheepak/tabline.nvim',
-        requires = { { 'hoob3rt/lualine.nvim', opt=true }, {'kyazdani42/nvim-web-devicons', opt = true} }
-    }
 
     use {
         'numToStr/Comment.nvim',
