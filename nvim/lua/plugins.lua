@@ -54,11 +54,8 @@ return require('packer').startup(function()
 
     use 'skywind3000/asyncrun.vim'
     use 'skywind3000/asynctasks.vim'
-    use { 'nvim-telescope/telescope.nvim', requires = {
-            'nvim-lua/plenary.nvim',
-            "debugloop/telescope-undo.nvim",
-        }
-    }
+    use { 'nvim-telescope/telescope.nvim', requires = {'nvim-lua/plenary.nvim'} }
+    use 'mbbill/undotree'
     use {
         'nvim-tree/nvim-tree.lua',
         requires = {
