@@ -46,3 +46,4 @@ set sessionoptions+=tabpages,globals " store tabpages and globals in session
 
 require('lualine').setup({})
 require("bufferline").setup({})
+require('scrollbar').setup({})
