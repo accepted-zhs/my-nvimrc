@@ -1,6 +1,6 @@
+require('plugins')
 require('ui')
 require('keybindings')
-require('plugins')
 require('plugin-config/setup')
 
 vim.cmd([[
