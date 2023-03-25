@@ -24,11 +24,11 @@ return {
     },
     {
         'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate',
+        build = ':TSUpdate',
         config = function ()
             require'nvim-treesitter.configs'.setup {
                 -- A list of parser names, or "all"
-                ensure_installed = { "c", "lua", "rust", "cpp", "markdown", "markdown_inline", "vim", "help", "query" },
+                ensure_installed = { "c", "lua", "rust", "cpp", "markdown", "markdown_inline", "vim", "help", "query", "regex", "bash" },
 
                 -- Install parsers synchronously (only applied to `ensure_installed`)
                 sync_install = false,
