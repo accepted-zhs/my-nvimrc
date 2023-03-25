@@ -3,20 +3,27 @@ return {
         "startup-nvim/startup.nvim",
         dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
         config = function()
-            require"startup".setup { theme = "dashboard" }
+            require("startup").setup { theme = "dashboard" }
         end
     },
     {
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
         config = function ()
-            require("lualine").setup {}
+            require("lualine").setup {
+                options = {
+                    theme = 'tokyonight'
+                }
+            }
         end
     },
     {
         'akinsho/bufferline.nvim',
         version = "v3.*",
-        dependencies = { 'nvim-tree/nvim-web-devicons' },
+        dependencies = {
+            'nvim-tree/nvim-web-devicons',
+            'folke/tokyonight.nvim',
+        },
         config = function ()
             require("bufferline").setup {}
         end
