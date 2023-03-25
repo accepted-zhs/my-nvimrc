@@ -17,7 +17,7 @@ return {
                 -- some keybindings are disabled because of lspsaga.nvim
                 keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
                 -- keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-                -- keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+                keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
                 keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
                 keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
                 keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
@@ -86,7 +86,7 @@ return {
         config = function ()
             local luasnip = require 'luasnip'
             local cmp = require('cmp')
-            cmp.setup {
+            cmp.setup({
                 snippet = {
                     expand = function(args)
                         luasnip.lsp_expand(args.body)
@@ -137,7 +137,7 @@ return {
                         cmp.config.compare.order,
                     },
                 },
-            }
+            })
 
             -- Set configuration for specific filetype.
             cmp.setup.filetype('gitcommit', {
@@ -224,7 +224,7 @@ return {
             keymap("n","<leader>o", "<cmd>Lspsaga outline<CR>")
 
             -- Hover Doc
-            keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>")
+            -- keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>")
 
             -- Callhierarchy
             keymap("n", "<Leader>ci", "<cmd>Lspsaga incoming_calls<CR>")
