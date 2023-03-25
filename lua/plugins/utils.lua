@@ -24,7 +24,7 @@ return {
         end
     },
     {
-        'nvim-telescope/telescope.nvim', 
+        'nvim-telescope/telescope.nvim',
         dependencies = { 'nvim-lua/plenary.nvim' },
         config = function ()
             local builtin = require('telescope.builtin')
@@ -40,7 +40,7 @@ return {
             'nvim-tree/nvim-web-devicons', -- optional, for file icons
         },
         version = 'nightly',
-        config = function() 
+        config = function()
             require("nvim-tree").setup {}
             vim.keymap.set('n', "<leader>e", ":NvimTreeToggle<CR>", { silent = true })
         end
