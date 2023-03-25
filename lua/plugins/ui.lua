@@ -1,26 +1,25 @@
 return {
     {
-        'nvim-lualine/lualine.nvim', 
+        "startup-nvim/startup.nvim",
+        dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+        config = function()
+            require"startup".setup { theme = "dashboard" }
+        end
+    },
+    {
+        'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
         config = function ()
             require("lualine").setup {}
         end
     },
     {
-        'akinsho/bufferline.nvim', 
-        version = "v3.*", 
+        'akinsho/bufferline.nvim',
+        version = "v3.*",
         dependencies = { 'nvim-tree/nvim-web-devicons' },
         config = function ()
             require("bufferline").setup {}
         end
-    },
-    {
-        'glepnir/dashboard-nvim',
-        event = 'VimEnter',
-        config = function()
-            require('dashboard').setup()
-        end,
-        dependencies = { 'nvim-tree/nvim-web-devicons' }
     },
     {
         "folke/noice.nvim",
