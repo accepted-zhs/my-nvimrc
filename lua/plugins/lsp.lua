@@ -17,7 +17,7 @@ return {
                 -- some keybindings are disabled because of lspsaga.nvim
                 keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
                 -- keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-                keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+                -- keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
                 keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
                 keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
                 keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
@@ -64,10 +64,19 @@ return {
                     },
                 },
             }
-
         end
     },
-    "ray-x/lsp_signature.nvim",
+    {
+        "ray-x/lsp_signature.nvim",
+        config = function ()
+            require'lsp_signature'.setup({
+                hint_prefix = "",
+                close_timeout = 1000,
+                -- floating_window_off_y = 10,
+                transparency = 20, -- disabled by default, allow floating win transparent value 1~100
+            })
+        end
+    },
 
     'hrsh7th/cmp-nvim-lsp',
     'saadparwaiz1/cmp_luasnip',
@@ -224,7 +233,7 @@ return {
             keymap("n","<leader>o", "<cmd>Lspsaga outline<CR>")
 
             -- Hover Doc
-            -- keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>")
+            keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>")
 
             -- Callhierarchy
             keymap("n", "<Leader>ci", "<cmd>Lspsaga incoming_calls<CR>")
