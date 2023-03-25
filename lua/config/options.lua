@@ -30,20 +30,9 @@ vim.opt.autowrite = true
 vim.opt.confirm = true
 vim.opt.autochdir = true
 
--- GUI
-vim.cmd([[
-set guifont=FiraCode\ Nerd\ Font\ Mono
-]])
-
--- colorscheme
-vim.g.colors_name = 'tokyonight-moon'
-vim.opt.background = 'dark'
-
+-- GUI 
 vim.cmd[[
+set guifont=FiraCode\ Nerd\ Font\ Mono
 set guioptions-=e " Use showtabline in gui vim
 set sessionoptions+=tabpages,globals " store tabpages and globals in session
 ]]
-
-require('lualine').setup({})
-require("bufferline").setup({})
-require('scrollbar').setup({})

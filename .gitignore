@@ -1,2 +1,2 @@
-/nvim/lazy-lock.json
-/nvim/plugin/*
+/lazy-lock.json
+/lua/.luarc.json
