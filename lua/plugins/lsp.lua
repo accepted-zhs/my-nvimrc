@@ -25,7 +25,7 @@ return {
                 keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
                 -- keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
                 -- keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
-                keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
+                -- keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
                 keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
             end
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
