@@ -210,7 +210,7 @@ return {
                         ["cmp.entry.get_documentation"] = true,
                     },
                     signature = {
-                        enabled = false,
+                        enabled = true,
                     }
                 },
                 -- you can enable a preset for easier configuration
