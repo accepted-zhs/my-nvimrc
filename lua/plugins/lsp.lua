@@ -66,6 +66,17 @@ return {
             }
         end
     },
+    {
+        "ray-x/lsp_signature.nvim",
+        config = function ()
+            require'lsp_signature'.setup({
+                hint_prefix = "",
+                close_timeout = 1000,
+                -- floating_window_off_y = 10,
+                transparency = 20, -- disabled by default, allow floating win transparent value 1~100
+            })
+        end
+    },
 
     'hrsh7th/cmp-nvim-lsp',
     'saadparwaiz1/cmp_luasnip',
