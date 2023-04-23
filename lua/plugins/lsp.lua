@@ -11,8 +11,8 @@ return {
     {
         "williamboman/mason-lspconfig.nvim",
         config = function ()
+            local keymap = vim.keymap
             local on_attach = function(_, bufnr)
-                local keymap = vim.keymap
                 local bufopts = { noremap = true, silent = true, buffer = bufnr }
                 -- some keybindings are disabled because of lspsaga.nvim
                 keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
@@ -40,33 +40,43 @@ return {
                         capabilities = capabilities,
                     }
                 end,
-                ['lua_ls'] = function ()
-                    require('lspconfig').lua_ls.setup {
-                        settings = {
-                            Lua = {
-                                runtime = {
-                                    -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-                                    version = 'LuaJIT',
-                                },
-                                diagnostics = {
-                                    -- Get the language server to recognize the `vim` global
-                                    globals = {'vim'},
-                                },
-                                workspace = {
-                                    -- Make the server aware of Neovim runtime files
-                                    library = vim.api.nvim_get_runtime_file("", true),
-                                },
-                                -- Do not send telemetry data containing a randomized but unique identifier
-                                telemetry = {
-                                    enable = false,
-                                },
-                            },
+            }
+
+            require('lspconfig').lua_ls.setup {
+                settings = {
+                    Lua = {
+                        runtime = {
+                            -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+                            version = 'LuaJIT',
                         },
-                    }
-                end
+                        diagnostics = {
+                            -- Get the language server to recognize the `vim` global
+                            globals = {'vim'},
+                        },
+                        workspace = {
+                            -- Make the server aware of Neovim runtime files
+                            library = vim.api.nvim_get_runtime_file("", true),
+                        },
+                        -- Do not send telemetry data containing a randomized but unique identifier
+                        telemetry = {
+                            enable = false,
+                        },
+                    },
+                },
             }
         end
     },
+    -- {
+    --     "ray-x/lsp_signature.nvim",
+    --     config = function ()
+    --         require'lsp_signature'.setup({
+    --             hint_prefix = "",
+    --             close_timeout = 1000,
+    --             -- floating_window_off_y = 10,
+    --             transparency = 20, -- disabled by default, allow floating win transparent value 1~100
+    --         })
+    --     end
+    -- },
 
     'hrsh7th/cmp-nvim-lsp',
     'saadparwaiz1/cmp_luasnip',
