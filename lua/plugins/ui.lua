@@ -234,4 +234,14 @@ return {
             require("scrollbar").setup {}
         end
     },
+    {
+        "chikko80/error-lens.nvim",
+        event = "BufRead",
+        dependencies = {
+            "nvim-telescope/telescope.nvim"
+        },
+        opts = {
+            -- your options go here
+        },
+    }
 }
