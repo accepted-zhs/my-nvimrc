@@ -41,35 +41,12 @@ return {
                     }
                 end,
             }
-
-            require('lspconfig').lua_ls.setup {
-                settings = {
-                    Lua = {
-                        runtime = {
-                            -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-                            version = 'LuaJIT',
-                        },
-                        diagnostics = {
-                            -- Get the language server to recognize the `vim` global
-                            globals = {'vim'},
-                        },
-                        workspace = {
-                            -- Make the server aware of Neovim runtime files
-                            library = vim.api.nvim_get_runtime_file("", true),
-                        },
-                        -- Do not send telemetry data containing a randomized but unique identifier
-                        telemetry = {
-                            enable = false,
-                        },
-                    },
-                },
-            }
         end
     },
     {
         "ray-x/lsp_signature.nvim",
         config = function ()
-            require'lsp_signature'.setup({
+            require('lsp_signature').setup({
                 hint_prefix = "",
                 close_timeout = 1000,
                 -- floating_window_off_y = 10,
@@ -86,6 +63,9 @@ return {
     'L3MON4D3/LuaSnip',
     {
         'p00f/clangd_extensions.nvim',
+        dependencies = {
+            "williamboman/mason-lspconfig.nvim"
+        },
         config = function ()
             require("clangd_extensions").setup()
         end
