@@ -67,7 +67,13 @@ return {
             "williamboman/mason-lspconfig.nvim"
         },
         config = function ()
-            require("clangd_extensions").setup()
+            require("clangd_extensions").setup({
+                extensions = {
+                    -- defaults:
+                    -- Automatically set inlay hints (type hints)
+                    autoSetHints = false,
+                }
+            })
         end
     },
     {
