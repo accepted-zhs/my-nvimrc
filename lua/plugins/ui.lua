@@ -243,5 +243,9 @@ return {
         opts = {
             -- your options go here
         },
-    }
+    },
+    {
+        "sitiom/nvim-numbertoggle",
+        event = "BufRead",
+    },
 }
