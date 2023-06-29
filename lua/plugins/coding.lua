@@ -74,6 +74,8 @@ return {
                     'dirvish',
                     'fugitive',
                     'NvimTree',
+                    'mason',
+                    'lazy',
                     ''
                 }
             })
