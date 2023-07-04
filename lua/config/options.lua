@@ -1,7 +1,8 @@
 vim.opt.termguicolors = true
 vim.opt.nu = true
 vim.opt.cursorline = true
-vim.opt.statusline = '2'
+vim.opt.statusline = '3'
+vim.opt.laststatus = 3
 vim.opt.showmode = false
 vim.opt.wildmenu = true
 vim.opt.eb = false
