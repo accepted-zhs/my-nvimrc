@@ -45,4 +45,7 @@ return {
             vim.keymap.set('n', "<leader>e", ":NvimTreeToggle<CR>", { silent = true })
         end
     },
+    {
+        "LunarVim/bigfile.nvim",
+    }
 }
