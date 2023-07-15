@@ -24,12 +24,13 @@ vim.opt.incsearch = true
 vim.opt.wrap = false
 vim.opt.switchbuf = 'useopen,usetab,newtab'
 
--- buffer
 vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.autowrite = true
 vim.opt.confirm = true
 vim.opt.autochdir = true
+vim.opt.undofile = true
+vim.opt.undodir = '~/.cache/'
 
 -- GUI 
 vim.cmd[[
