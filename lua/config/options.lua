@@ -30,7 +30,7 @@ vim.opt.autowrite = true
 vim.opt.confirm = true
 vim.opt.autochdir = true
 vim.opt.undofile = true
-vim.opt.undodir = '~/.cache/'
+vim.opt.undodir = '/var/tmp/'
 
 -- GUI 
 vim.cmd[[
